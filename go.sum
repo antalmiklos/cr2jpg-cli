@@ -1,0 +1,4 @@
+github.com/nf/cr2 v0.0.0-20180623103828-4699471a17ed h1:QP63yO3XEt8tJ1DgBsNjbOyBGjy2eHy9ITK4Eisr9rg=
+github.com/nf/cr2 v0.0.0-20180623103828-4699471a17ed/go.mod h1:HazDB3gS/i//QXMMRmTAV7Ni9gAi4mDNTH2HjZ5aVgU=
+github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646 h1:zYyBkD/k9seD2A7fsi6Oo2LfFZAehjjQMERAvZLEDnQ=
+github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646/go.mod h1:jpp1/29i3P1S/RLdc7JQKbRpFeM1dOBd8T9ki5s+AY8=
