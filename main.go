@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"flag"
+	"fmt"
 	"image/jpeg"
 	"log"
 	"os"
@@ -38,6 +39,7 @@ func main() {
 		os.Exit(0)
 	}
 
+	fmt.Println(src)
 	srcVal, err := os.Stat(src)
 	if err != nil {
 		log.Fatal(err)
@@ -49,11 +51,11 @@ func main() {
 			log.Fatal(err)
 		}
 		for _, v := range files {
-			orig := srcVal.Name() + "/" + v.Name()
-			convert(orig, NO_RENAME)
+			orig := src + "/" + v.Name()
+			convert(orig, NO_RENAME, dest)
 		}
 	} else {
-		convert(src, destFile)
+		convert(src, destFile, dest)
 	}
 }
 
@@ -61,7 +63,7 @@ func getXY(origX, origY int) (int, int) {
 	return int(float64(origX) * size), int(float64(origY) * size)
 }
 
-func convert(src string, destFile string) error {
+func convert(src string, destFile, destPath string) error {
 
 	// target dimensions of the image
 	var newX, newY int
@@ -92,7 +94,7 @@ func convert(src string, destFile string) error {
 		destFile = file.Name()
 	}
 
-	newFile, err := os.Create(destFile + ".jpg")
+	newFile, err := os.Create(destPath + "/" + destFile + ".jpg")
 	if err != nil {
 		log.Fatal(err)
 	}
