@@ -16,6 +16,7 @@ const (
 )
 
 var (
+	help        bool
 	src         string
 	dest        string
 	destFile    string
@@ -24,12 +25,18 @@ var (
 )
 
 func main() {
+	flag.BoolVar(&help, "h", false, "print this message")
 	flag.StringVar(&src, "source", "", "source file path or directory")
 	flag.StringVar(&dest, "dest", "", "destination path")
 	flag.StringVar(&destFile, "destFile", "", "destination file name if source is not a path")
 	flag.Float64Var(&size, "size", 1.0, "scale of the new image")
 	flag.IntVar(&threadCount, "threads", 1, "number of threads to use WIP")
 	flag.Parse()
+
+	if help {
+		flag.Usage()
+		os.Exit(0)
+	}
 
 	srcVal, err := os.Stat(src)
 	if err != nil {
