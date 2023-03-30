@@ -1,0 +1,2 @@
+github.com/nf/cr2
+github.com/nfnt/resize
