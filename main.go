@@ -29,7 +29,6 @@ func main() {
 	flag.StringVar(&destFile, "destFile", "", "destination file name if source is not a path")
 	flag.Float64Var(&size, "size", 1.0, "scale of the new image")
 	flag.IntVar(&threadCount, "threads", 1, "number of threads to use WIP")
-
 	flag.Parse()
 
 	srcVal, err := os.Stat(src)
